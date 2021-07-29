@@ -17,12 +17,10 @@ export default class Cart {
         return ( this.sum() * (1 - (discount / 100)));  
     }
 
-    remove(id: number): void {
-        const itemIndex = this._items.findIndex((item) => item.id === id);
-        if (itemIndex != -1) {
-            this._items.splice(itemIndex, 1);
-        }
+    removeItem(id: number): void {
+        this._items = this._items.filter((item: Buyable) => item.id !== id);
     }
+    
 
     get items(): Buyable[] {
         return [...this._items]; 

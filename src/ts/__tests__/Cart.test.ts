@@ -66,7 +66,7 @@ test('cart remove', () => {
   cart.add(item1);
   cart.add(item2);
   cart.add(item3);
-  cart.remove(1008)
+  cart.removeItem(1008)
   expect(cart.items).toEqual([item1, item3]);
 });
 
@@ -80,8 +80,8 @@ test('cart remove countable', () => {
   cart.add(item3);
   cart.add(item3);
   cart.add(item3);
-  cart.remove(555)
-  expect(cart.items).toEqual([item1, item2, item3, item3]);
+  cart.removeItem(555)
+  expect(cart.items).toEqual([item1, item2]);
 });
 
 test('cart remove once', () => {
@@ -92,8 +92,8 @@ test('cart remove once', () => {
   cart.add(item1);
   cart.add(item2);
   cart.add(item3);
-  cart.remove(1010);
-  cart.remove(1010);
-  cart.remove(1010);
+  cart.removeItem(1010);
+  cart.removeItem(1010);
+  cart.removeItem(1010);
   expect(cart.items).toEqual([item1, item2]);
 });
